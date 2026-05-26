@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Fazenda Sustentável - Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulador de Fazenda Sustentável</h1>
+            <p class="subtitle">Equilíbrio entre produção e preservação ambiental</p>
+        </header>
+
+        <section class="status-panel">
+            <div class="status-card">
+                <h3>Dinheiro em Caixa</h3>
+                <p id="money-display">R$ 10.000</p>
+            </div>
+            <div class="status-card">
+                <h3>Saúde Ambiental</h3>
+                <div class="progress-bar">
+                    <div id="environment-bar" style="width: 50%;"></div>
+                </div>
+                <p id="environment-display">50%</p>
+            </div>
+            <div class="status-card score-card">
+                <h3>Pontuação</h3>
+                <p id="score-display">0</p>
+            </div>
+        </section>
+
+        <main class="game-box">
+            <div id="event-card">
+                <h2 id="event-title">Início da Temporada</h2>
+                <p id="event-description">Escolha uma ação abaixo para começar a gerenciar sua fazenda com equilíbrio.</p>
+            </div>
+
+            <div class="actions-container">
+                <button class="btn" onclick="makeChoice('agrodefensivo')">Usar Defensivos Químicos Pesados</button>
+                <button class="btn" onclick="makeChoice('bioinsumo')">Investir em Bioinsumos Naturais</button>
+                <button class="btn" onclick="makeChoice('desmatar')">Expandir Área Desmatando Floresta</button>
+                <button class="btn" onclick="makeChoice('plantiodireto')">Adotar Plantio Direto e Rotação</button>
+            </div>
+        </main>
+
+        <section class="schedule-section">
+            <h2>Cronograma de Plantio e Colheita</h2>
+            <p>Confira as etapas de plantio, cuidado e colheita para manter sua fazenda sustentável e produtiva.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Período</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Preparo do Solo</td>
+                            <td>Semana 1-2</td>
+                            <td>Adubar, preparar canteiros e corrigir o pH com calcário e compostos orgânicos.</td>
+                        </tr>
+                        <tr>
+                            <td>Plantio</td>
+                            <td>Semana 3</td>
+                            <td>Semear ou transplantar mudas em um espaçamento correto para cada cultura.</td>
+                        </tr>
+                        <tr>
+                            <td>Manutenção</td>
+                            <td>Semana 4-10</td>
+                            <td>Regar, controlar pragas com manejo integrado e praticar rotação de culturas.</td>
+                        </tr>
+                        <tr>
+                            <td>Colheita</td>
+                            <td>Semana 11-12</td>
+                            <td>Colher no ponto ideal e iniciar o planejamento para o próximo ciclo de plantio.</td>
+                        </tr>
+                        <tr>
+                            <td>Descanso do Solo</td>
+                            <td>Após Colheita</td>
+                            <td>Deixar a terra em pousio ou plantar cobertura verde para restaurar nutrientes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="feedback-modal" class="feedback-modal hidden">
+            <div class="feedback-card">
+                <p id="feedback-text"></p>
+                <button class="btn btn-reset" onclick="resetGame()">Reiniciar Simulador</button>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <p>Desenvolvido por Natáli Lavínia da Silva Souza</p>
+        </footer>
+    </div>
+
+    <div id="falling-vegetables" class="falling-vegetables"></div>
+    <script src="script.js"></script>
+</body>
+</html>
